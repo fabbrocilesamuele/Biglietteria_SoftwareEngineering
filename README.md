@@ -1,4 +1,4 @@
-# 🎟️ Sistema di Biglietteria (Software Engineering - Gruppo 9)
+# 🎟️ Sistema di Biglietteria (Software Engineering)
 
 **Progetto sviluppato per l'esame di Software Engineering dell'Università di Cassino.**
 
