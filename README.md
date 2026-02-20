@@ -1,20 +1,22 @@
-# 🎟️ Sistema di Biglietteria (Software Engineering)
+# Sistema di Biglietteria (Software Engineering)
 
-**Progetto sviluppato per l'esame di Software Engineering dell'Università di Cassino.**
+Progetto sviluppato per l’esame di Software Engineering presso l’Università degli Studi di Cassino e del Lazio Meridionale.
 
-L'applicazione mira a **gestire la vendita e la prenotazione di biglietti per eventi**, consentendo sia ai clienti di consultare e acquistare posti, sia alle organizzazioni autorizzate di inserire e monitorare gli eventi.
+L’applicazione è progettata per gestire la vendita e la prenotazione di biglietti per eventi, consentendo ai clienti di consultare gli eventi disponibili, prenotare posti e monitorare le proprie prenotazioni, e alle organizzazioni autorizzate di inserire, aggiornare e gestire gli eventi pubblicati.
+
+Il sistema poggia su un database relazionale progettato in SQL (MySQL), che gestisce in modo strutturato entità come eventi, clienti, prenotazioni, organizzazioni, collaboratori e lista d’attesa, garantendo integrità referenziale tramite chiavi primarie e chiavi esterne.
 
 ---
 
-## ✨ Funzionalità Dettagliate
+##  Funzionalità Dettagliate
 
-### 1. 🔑 Accesso e Autenticazione
+### 1.  Accesso e Autenticazione
 
 L'accesso all'applicazione è gestito tramite una schermata di **Login/Register**. Gli utenti possono accedere inserendo la propria Email e Password, oppure procedere alla registrazione di un nuovo account.
 
 ![Schermata di Login](screenshots/login.png)
 
-### 2. 👤 Funzionalità Lato Cliente
+### 2.  Funzionalità Lato Cliente
 
 Una volta effettuato l'accesso, l'utente può gestire le proprie prenotazioni.
 
@@ -36,7 +38,7 @@ Una volta effettuato l'accesso, l'utente può gestire le proprie prenotazioni.
 
 ![Profilo Utente e Lista Prenotazioni](screenshots/cliente2.png)
 
-### 3. 🏢 Funzionalità Lato Organizzazione (Operatore)
+### 3.  Funzionalità Lato Organizzazione (Operatore)
 
 L'operatore ha strumenti dedicati per la gestione degli eventi e il monitoraggio delle vendite.
 
@@ -55,7 +57,7 @@ L'operatore ha strumenti dedicati per la gestione degli eventi e il monitoraggio
 
 ---
 
-## 💻 Architettura e Tecnologie
+##  Architettura e Tecnologie
 
 Il sistema è basato su un'architettura **MVC** e utilizza il pattern **DAO** per la persistenza dei dati.
 
