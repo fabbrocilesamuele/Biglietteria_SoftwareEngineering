@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="it.unicas.project.template.address.view.ReceiptController"
+            prefWidth="350" prefHeight="500">
+
+    <center>
+        <VBox spacing="8.0" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+
+            <!-- intestazione tipo scontrino -->
+            <Label text="RICEVUTA PRENOTAZIONE"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <Separator/>
+
+            <!-- Evento -->
+            <Label text="Evento:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="eventTitleLabel" text="Titolo evento"/>
+
+            <Label text="Data / Ora:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="eventDateTimeLabel" text="Data e ora"/>
+
+            <Label text="Luogo:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="eventPlaceLabel" text="Luogo"/>
+
+            <Separator/>
+
+            <!-- Cliente -->
+            <Label text="Cliente:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="customerNameLabel" text="Nome Cognome"/>
+            <Label fx:id="customerEmailLabel" text="email@example.com"/>
+
+            <Separator/>
+
+            <!-- Prenotazione -->
+            <Label text="Data prenotazione:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="bookingDateTimeLabel" text="data / ora prenotazione"/>
+
+            <Label text="Posti prenotati:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="seatsLabel" wrapText="true" text="A1, A2, B3"/>
+
+            <Separator/>
+
+            <Label text="Grazie per la tua prenotazione!"
+                   style="-fx-font-size: 11px;"/>
+
+        </VBox>
+    </center>
+
+</BorderPane>

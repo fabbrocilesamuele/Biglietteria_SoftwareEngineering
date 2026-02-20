@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="it.unicas.project.template.address.view.ReportController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <children>
+        <VBox prefWidth="600.0" prefHeight="400.0" spacing="0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+            <!-- Header -->
+            <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 10; -fx-background-color: #f0f0f0;">
+                <Button text="Indietro" onAction="#onIndietro" style="-fx-font-size: 14px; -fx-text-fill: white;"/>
+                <Label text="Statistiche Eventi" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+                <Region HBox.hgrow="ALWAYS"/>
+            </HBox>
+
+            <!-- TabPane -->
+            <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                <!-- I tab verranno aggiunti dal controller -->
+            </TabPane>
+        </VBox>
+    </children>
+</AnchorPane>

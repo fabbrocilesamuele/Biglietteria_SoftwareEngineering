@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="400.0" prefWidth="900.0" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.project.template.address.view.TopBarController">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="Account">
+                    <items>
+                        <MenuItem mnemonicParsing="false" fx:id="menu_prenotazioni" onAction="#handlePrenotazioni" text="Gestione prenotazioni">
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#handleLogout" text="Logout" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false"  fx:id='menu_report' text="Report">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleStatistics" text="Statistiche" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+</BorderPane>

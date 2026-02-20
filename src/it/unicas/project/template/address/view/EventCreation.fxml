@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="600.0" prefWidth="700.0"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="it.unicas.project.template.address.view.EventCreationController">
+
+    <!-- TOP: titolo form -->
+    <top>
+        <VBox spacing="5">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <children>
+                <Label fx:id="titoloTabella" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Registrazione Nuovo Evento" />
+            </children>
+        </VBox>
+    </top>
+
+    <!-- CENTER: campi evento -->
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="AS_NEEDED" vbarPolicy="AS_NEEDED">
+            <content>
+                <GridPane hgap="10" vgap="10">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10" />
+                    </padding>
+
+                    <!-- Colonna 0: Etichette -->
+                    <children>
+                        <Label text="Titolo:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="titolo" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                        <Label text="Descrizione:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextArea fx:id="descrizione" GridPane.columnIndex="1" GridPane.rowIndex="1" prefRowCount="2" GridPane.vgrow="ALWAYS" />
+
+                        <Label text="Costo per posto (€):" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextField fx:id="costi" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                        <Label text="Tag tematici:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <TextField fx:id="tagTematici" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                        <Label text="Note organizzative:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <TextArea fx:id="noteOrganizzative" GridPane.columnIndex="1" GridPane.rowIndex="4" prefRowCount="2" GridPane.vgrow="ALWAYS" />
+
+                        <Label text="Tipo evento:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <ComboBox fx:id="tipo" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                        <Separator GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+
+                        <Label text="Data:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                        <DatePicker fx:id="dataEvento" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+
+                        <Label text="Orario Inizio:" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                        <ComboBox fx:id="orarioInizio" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+
+                        <Label text="Orario Fine:" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+                        <ComboBox fx:id="orarioFine" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+
+                        <Separator GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="11" />
+
+                        <Label text="Luogo:" GridPane.columnIndex="0" GridPane.rowIndex="12" />
+                        <ComboBox fx:id="luoghiDisponibili" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+
+                        <!-- Separator sopra -->
+                        <Separator GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="13" />
+
+                        <!-- Label e ComboBox sulla stessa riga -->
+                        <Label text="Seleziona Collaboratori:" GridPane.columnIndex="0" GridPane.rowIndex="14" />
+                        <ComboBox fx:id="collaboratoriDisponibili"
+                                  GridPane.columnIndex="1" GridPane.rowIndex="14"
+                                  disable="true"
+                                  VBox.vgrow="NEVER" />
+
+                        <!-- FlowPane sotto il ComboBox, occupa tutta la colonna 1 -->
+                        <FlowPane fx:id="flowCollaboratoriSelezionati"
+                                  GridPane.columnIndex="1" GridPane.rowIndex="17"
+                                  disable="true"
+                                  hgap="5" vgap="5"
+                                  VBox.vgrow="ALWAYS" />
+
+
+                    </children>
+
+                    <!-- Column constraints -->
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="NEVER" />
+                        <ColumnConstraints hgrow="ALWAYS" />
+                    </columnConstraints>
+
+                    <!-- Row constraints -->
+                    <rowConstraints>
+                        <RowConstraints vgrow="NEVER" />
+                        <RowConstraints vgrow="ALWAYS" />
+                        <RowConstraints vgrow="NEVER" />
+                        <RowConstraints vgrow="NEVER" />
+                        <RowConstraints vgrow="ALWAYS" />
+                        <RowConstraints vgrow="NEVER" />
+                        <RowConstraints vgrow="NEVER" />
+                        <RowConstraints vgrow="NEVER" />
+                        <RowConstraints vgrow="NEVER" />
+                        <RowConstraints vgrow="NEVER" />
+                        <RowConstraints vgrow="NEVER" />
+                        <RowConstraints vgrow="NEVER" />
+                        <RowConstraints vgrow="NEVER" />
+                        <RowConstraints vgrow="ALWAYS" />
+                        <RowConstraints vgrow="ALWAYS" />
+                    </rowConstraints>
+                </GridPane>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <!-- BOTTOM: pulsanti -->
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <children>
+                <Label fx:id="registerStatusLabel" text="" HBox.hgrow="ALWAYS"/>
+                <Button onAction="#onCancel" text="Annulla" style="-fx-text-fill: white"/>
+                <Button onAction="#handleConfirm" text="Registra evento" style="-fx-text-fill: white"/>
+            </children>
+        </HBox>
+    </bottom>
+
+</BorderPane>

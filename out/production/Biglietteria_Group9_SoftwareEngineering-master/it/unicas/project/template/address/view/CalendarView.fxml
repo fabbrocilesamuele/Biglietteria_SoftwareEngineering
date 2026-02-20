@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane prefHeight="600.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="it.unicas.project.template.address.view.CalendarViewController">
+
+<!-- TOP: titolo e selettore vista -->
+<top>
+    <VBox spacing="8.0" VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS">
+        <padding>
+            <Insets top="10" bottom="10" left="10" right="10"/>
+        </padding>
+        <children>
+
+            <Label text="Programmazione Eventi"
+                   style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <CheckBox fx:id="monthViewCheckBox"
+                          text="Vista mensile"
+                          onAction="#onToggleView"/>
+
+                <Label fx:id="currentPeriodLabel"
+                       text="Settimana corrente"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <!-- Bottone visibile solo per ORGANIZZATORE -->
+                <Button fx:id="newEventButton"
+                        text="Registra nuovo evento"
+                        onAction="#onNewEventClicked"
+                        visible="false"
+                        managed="false"
+                        style="-fx-background-color: #1E88E5;
+                       -fx-text-fill: white;
+                       -fx-font-weight: bold;
+                       -fx-background-radius: 18;
+                       -fx-padding: 4 10;"/>
+            </HBox>
+
+
+
+        </children>
+    </VBox>
+</top>
+
+<!-- CENTER: calendario settimanale o mensile -->
+<center>
+    <StackPane VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS">
+
+        <!-- Vista settimanale -->
+        <ScrollPane fx:id="weekScrollPane" fitToWidth="true" fitToHeight="true">
+            <content>
+                <GridPane fx:id="weekGrid"
+                          hgap="5" vgap="5">
+                    <padding>
+                        <Insets top="10" bottom="10" left="10" right="10"/>
+                    </padding>
+                </GridPane>
+            </content>
+        </ScrollPane>
+
+        <!-- Vista mensile -->
+        <ScrollPane fx:id="monthScrollPane"
+                    visible="false" managed="false"
+                    fitToWidth="true" fitToHeight="true">
+            <content>
+                <GridPane fx:id="monthGrid"
+                          hgap="5" vgap="5">
+                    <padding>
+                        <Insets top="10" bottom="10" left="10" right="10"/>
+                    </padding>
+                </GridPane>
+            </content>
+        </ScrollPane>
+
+    </StackPane>
+</center>
+
+<!-- RIGHT: legenda -->
+<right>
+    <VBox spacing="10">
+        <padding>
+            <Insets top="15" bottom="10" left="10" right="10"/>
+        </padding>
+        <children>
+            <Label text="Legenda"
+                   style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+
+            <HBox spacing="6">
+                <Label style="-fx-background-color: #4CAF50; -fx-min-width: 20; -fx-min-height: 20;"/>
+                <Label text="Biglietti disponibili"/>
+            </HBox>
+
+            <HBox spacing="6">
+                <Label style="-fx-background-color: #F44336; -fx-min-width: 20; -fx-min-height: 20;"/>
+                <Label text="Biglietti esauriti"/>
+            </HBox>
+
+        </children>
+    </VBox>
+</right>
+
+
+</BorderPane>
